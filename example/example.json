@@ -1,0 +1,52 @@
+{
+    "name": "Example Animation",
+    "ext": "gif",
+    "fps": 30,
+    "loop": 1,
+    "data": [
+        {
+            "frames": 60,
+            "pos1_position_from": [0, 0.5],
+            "pos2_position_from": [1, 0.5],
+            "pos1_position_to": [-0.0022857390075422535, -0.7737900509958621],
+            "pos2_position_to": [1.0504521004283056, 1.3857831660198636],
+            "pos1_color_from": [28, 202, 226],
+            "pos2_color_from": [9, 70, 245],
+            "pos1_color_to": [255, 226, 39],
+            "pos2_color_to": [255, 54, 54]
+        },
+        {
+            "frames": 15,
+            "pos1_position_from": [-0.0022857390075422535, -0.7737900509958621],
+            "pos2_position_from": [1.0504521004283056, 1.3857831660198636],
+            "pos1_position_to": [0.4303462498017105, 0.12425029667404347],
+            "pos2_position_to": [0.8016887068629857, 1.1398911660626272],
+            "pos1_color_from": [255, 226, 39],
+            "pos2_color_from": [255, 54, 54],
+            "pos1_color_to": [255, 226, 39],
+            "pos2_color_to": [255, 54, 54]
+        },
+        {
+            "frames": 60,
+            "pos1_position_from": [0.4303462498017105, 0.12425029667404347],
+            "pos2_position_from": [0.8016887068629857, 1.1398911660626272],
+            "pos1_position_to": [0.037372193299972406, -0.2820060510813901],
+            "pos2_position_to": [1.010794168120791, 0.39152420967103907],
+            "pos1_color_from": [255, 226, 39],
+            "pos2_color_from": [255, 54, 54],
+            "pos1_color_to": [28, 202, 226],
+            "pos2_color_to": [9, 70, 245]
+        },
+        {
+            "frames": 15,
+            "pos1_position_from": [0.037372193299972406, -0.2820060510813901],
+            "pos2_position_from": [1.010794168120791, 0.39152420967103907],
+            "pos1_position_to": [0, 0.5],
+            "pos2_position_to": [1, 0.5],
+            "pos1_color_from": [28, 202, 226],
+            "pos2_color_from": [9, 70, 245],
+            "pos1_color_to": [28, 202, 226],
+            "pos2_color_to": [9, 70, 245]
+        }
+    ]
+}
