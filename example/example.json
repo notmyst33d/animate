@@ -13,7 +13,11 @@
             "pos1_color_from": [28, 202, 226],
             "pos2_color_from": [9, 70, 245],
             "pos1_color_to": [255, 226, 39],
-            "pos2_color_to": [255, 54, 54]
+            "pos2_color_to": [255, 54, 54],
+            "pos1_alpha_from": 1,
+            "pos2_alpha_from": 1,
+            "pos1_alpha_to": 1,
+            "pos2_alpha_to": 1
         },
         {
             "frames": 15,
@@ -24,7 +28,11 @@
             "pos1_color_from": [255, 226, 39],
             "pos2_color_from": [255, 54, 54],
             "pos1_color_to": [255, 226, 39],
-            "pos2_color_to": [255, 54, 54]
+            "pos2_color_to": [255, 54, 54],
+            "pos1_alpha_from": 1,
+            "pos2_alpha_from": 1,
+            "pos1_alpha_to": 1,
+            "pos2_alpha_to": 1
         },
         {
             "frames": 60,
@@ -35,7 +43,11 @@
             "pos1_color_from": [255, 226, 39],
             "pos2_color_from": [255, 54, 54],
             "pos1_color_to": [28, 202, 226],
-            "pos2_color_to": [9, 70, 245]
+            "pos2_color_to": [9, 70, 245],
+            "pos1_alpha_from": 1,
+            "pos2_alpha_from": 1,
+            "pos1_alpha_to": 1,
+            "pos2_alpha_to": 1
         },
         {
             "frames": 15,
@@ -46,7 +58,11 @@
             "pos1_color_from": [28, 202, 226],
             "pos2_color_from": [9, 70, 245],
             "pos1_color_to": [28, 202, 226],
-            "pos2_color_to": [9, 70, 245]
+            "pos2_color_to": [9, 70, 245],
+            "pos1_alpha_from": 1,
+            "pos2_alpha_from": 1,
+            "pos1_alpha_to": 1,
+            "pos2_alpha_to": 1
         }
     ]
 }

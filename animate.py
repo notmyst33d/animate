@@ -8,22 +8,22 @@ import cairosvg
 import numpy as np
 
 try:
-    shutil.rmtree("out")
+    shutil.rmtree("frames")
 except:
     pass
-os.mkdir("out")
+os.mkdir("frames")
 
 if len(sys.argv) < 3:
     print("Usage: animate.py my_animation.json my_design.svg")
     exit()
 
-animation_data = json.loads(open(sys.argv[1], "r").read())
+animation = json.loads(open(sys.argv[1], "r").read())
 svg_file = open(sys.argv[2], "r").read()
 
 current_frame = 0
 
-for loop in range(0, animation_data["loop"]):
-    for entry in animation_data["data"]:
+for loop in range(0, animation["loop"]):
+    for entry in animation["data"]:
         frame_data = zip(
             # Interpolate X and Y of the point 1 and point 2
             np.linspace(
@@ -68,10 +68,19 @@ for loop in range(0, animation_data["loop"]):
                 entry["pos2_color_from"][2],
                 entry["pos2_color_to"][2], num=entry["frames"], dtype=int
             ),
+            # Interpolate transparency values of the point 1 and point 2
+            np.linspace(
+                entry["pos1_alpha_from"],
+                entry["pos1_alpha_to"], num=entry["frames"]
+            ),
+            np.linspace(
+                entry["pos2_alpha_from"],
+                entry["pos2_alpha_to"], num=entry["frames"]
+            ),
         )
 
         # Render the interpolated frames
-        for pos1_x, pos1_y, pos2_x, pos2_y, pos1_r, pos1_g, pos1_b, pos2_r, pos2_g, pos2_b in frame_data:
+        for pos1_x, pos1_y, pos2_x, pos2_y, pos1_r, pos1_g, pos1_b, pos2_r, pos2_g, pos2_b, pos1_alpha, pos2_alpha in frame_data:
             # Copy original SVG file
             inter_frame = svg_file
 
@@ -91,13 +100,19 @@ for loop in range(0, animation_data["loop"]):
             inter_frame = inter_frame.replace(
                 "{pos2_color}", f"{pos2_r},{pos2_g},{pos2_b}")
 
+            # Place interpolated transparency
+            inter_frame = inter_frame.replace(
+                "{pos1_alpha}", str(pos1_alpha))
+            inter_frame = inter_frame.replace(
+                "{pos2_alpha}", str(pos2_alpha))
+
             cairosvg.svg2png(
                 bytestring=inter_frame.encode(),
-                write_to=f"out/{current_frame}.png"
+                write_to=f"frames/{current_frame}.png"
             )
 
-            print(f"Rendered frame {current_frame}")
+            print(f"Rendered frame {current_frame + 1}")
             current_frame += 1
 
 os.system(
-    f"ffmpeg -y -r {animation_data['fps']} -i out/%0d.png -pix_fmt yuv420p \"{animation_data['name']}.{animation_data['ext']}\"")
+    f"ffmpeg -y -r {animation['fps']} -i frames/%0d.png -pix_fmt yuv420p \"{animation['name']}.{animation['ext']}\"")
